@@ -15,8 +15,7 @@ def on_message(ws, message):
   prices[trading_pair] = (best_ask_price, best_bid_price)
 
   if len(prices) == 3:
-    has_opportunity = check_arbitrage_opportunity(prices)
-    if has_opportunity:
+    if has_opportunity := check_arbitrage_opportunity(prices):
       print(f"Opportunity found: {prices}")
 
 # On Error
